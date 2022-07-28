@@ -19,6 +19,8 @@ RUN apt-get -y install htop
 
 RUN sudo apt-get install --reinstall g++
 
+RUN sudo apt-get install ninja-build
+
 # 3) install packages using notebook user
 USER jovyan
 
