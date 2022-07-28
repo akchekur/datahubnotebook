@@ -15,6 +15,8 @@ USER root
 
 RUN apt-get -y install htop
 
+RUN apt-get install g++
+
 # 3) install packages using notebook user
 USER jovyan
 
@@ -24,4 +26,4 @@ RUN pip install --no-cache-dir networkx scipy
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
-RUN sudo apt-get install g++
+
