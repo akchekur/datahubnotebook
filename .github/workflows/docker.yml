@@ -32,4 +32,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ucsdets/datahub-example-notebook:test
+          tags: akhi0254/datahubenvupdate:test
