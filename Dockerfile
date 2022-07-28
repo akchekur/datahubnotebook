@@ -19,7 +19,11 @@ RUN apt-get -y install htop
 
 RUN sudo apt-get install --reinstall g++
 
-RUN sudo apt-get install ninja-build
+# RUN sudo apt-get install ninja-build
+
+RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
+RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
 
 # 3) install packages using notebook user
 USER jovyan
