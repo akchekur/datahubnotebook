@@ -17,13 +17,13 @@ RUN apt-get -y install htop
 
 # RUN apt-get install g++
 
-RUN sudo apt-get install --reinstall g++
+RUN sudo apt-get install g++
 
 # RUN sudo apt-get install ninja-build
 
-RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
-RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
-RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
+# RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+# RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
+# RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
 
 # 3) install packages using notebook user
 USER jovyan
@@ -31,6 +31,9 @@ USER jovyan
 # RUN conda install -y scikit-learn
 
 RUN pip install --no-cache-dir networkx scipy
+
+RUN pip install torch
+RUN pip install torchvision
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
