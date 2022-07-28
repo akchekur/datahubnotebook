@@ -15,7 +15,9 @@ USER root
 
 RUN apt-get -y install htop
 
-RUN apt-get install g++
+# RUN apt-get install g++
+
+RUN sudo apt install g++
 
 # 3) install packages using notebook user
 USER jovyan
