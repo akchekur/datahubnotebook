@@ -27,9 +27,13 @@ RUN sudo echo y|apt-get install build-essential manpages-dev -
 
 # RUN sudo apt-get install ninja-build
 
-# RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
-# RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
-# RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
+RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
+RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
+
+RUN echo y| conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+
+RUN echo y| conda install -c conda-forge cudatoolkit-dev
 
 # 3) install packages using notebook user
 USER jovyan
