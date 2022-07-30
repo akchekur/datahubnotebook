@@ -13,12 +13,14 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 # 2) change to root to install packages
 USER root
 
+RUN sudo apt-get build-dep python3
+
 RUN apt-get -y install htop
 
-RUN sudo apt install cmake g++ make 
+
 # RUN apt-get install g++
 
-# RUN sudo apt-get install g++
+RUN sudo apt-get install --reinstall g++
 
 # RUN sudo apt-get install ninja-build
 
