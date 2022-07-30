@@ -23,7 +23,7 @@ RUN apt-get -y install htop
 # RUN sudo apt-get install --reinstall g++
 
 RUN sudo apt-get update
-RUN sudo apt-get install build-essential manpages-dev
+RUN sudo echo y|apt-get install build-essential manpages-dev -
 
 # RUN sudo apt-get install ninja-build
 
