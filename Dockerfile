@@ -15,9 +15,10 @@ USER root
 
 RUN apt-get -y install htop
 
+RUN sudo apt install cmake g++ make 
 # RUN apt-get install g++
 
-RUN sudo apt-get install g++
+# RUN sudo apt-get install g++
 
 # RUN sudo apt-get install ninja-build
 
