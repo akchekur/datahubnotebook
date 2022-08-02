@@ -31,7 +31,9 @@ RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-lin
 RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
 RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
 
-RUN echo y| conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+RUN echo y| conda update -n base conda
+
+# RUN echo y| conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 
 RUN echo y| conda install -c conda-forge cudatoolkit-dev
 
