@@ -40,9 +40,9 @@ RUN echo y| conda install -c conda-forge cudatoolkit-dev
 # 3) install packages using notebook user
 USER jovyan
 
-# RUN conda install -y scikit-learn
+RUN conda install -y scikit-learn --user
 
-RUN pip install --no-cache-dir networkx scipy
+RUN pip install --no-cache-dir networkx scipy --user
 
 RUN pip install torch
 RUN pip install torchvision
