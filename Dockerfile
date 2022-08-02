@@ -13,39 +13,23 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 # 2) change to root to install packages
 USER root
 
-#RUN sudo apt-get build-dep python3
 
 RUN apt-get -y install htop
 
-
-# RUN apt-get install g++
-
-# RUN sudo apt-get install --reinstall g++
-
 RUN sudo apt-get update
 RUN sudo echo y|apt-get install build-essential manpages-dev -
-
-# RUN sudo apt-get install ninja-build
 
 RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
 RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
 RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
 
-RUN echo y| conda update -n base conda
-
 RUN echo y| conda install pytorch torchvision cudatoolkit=11.3 -c pytorch
-
-# RUN echo y| conda install -c conda-forge cudatoolkit-dev
 
 # 3) install packages using notebook user
 USER jovyan
 
-# RUN pip install -y scikit-learn --user
-
 RUN pip install --no-cache-dir networkx scipy --user
 
-# RUN pip install torch
-# RUN pip install torchvision
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
