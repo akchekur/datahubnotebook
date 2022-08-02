@@ -40,7 +40,7 @@ RUN echo y| conda install -c conda-forge cudatoolkit-dev
 # 3) install packages using notebook user
 USER jovyan
 
-RUN pip install -y scikit-learn --user
+# RUN pip install -y scikit-learn --user
 
 RUN pip install --no-cache-dir networkx scipy --user
 
