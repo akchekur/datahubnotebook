@@ -33,9 +33,9 @@ RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja
 
 RUN echo y| conda update -n base conda
 
-# RUN echo y| conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+RUN echo y| conda install pytorch torchvision cudatoolkit=11.3 -c pytorch
 
-RUN echo y| conda install -c conda-forge cudatoolkit-dev
+# RUN echo y| conda install -c conda-forge cudatoolkit-dev
 
 # 3) install packages using notebook user
 USER jovyan
@@ -44,8 +44,8 @@ USER jovyan
 
 RUN pip install --no-cache-dir networkx scipy --user
 
-RUN pip install torch
-RUN pip install torchvision
+# RUN pip install torch
+# RUN pip install torchvision
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
