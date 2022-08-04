@@ -27,7 +27,10 @@ RUN sudo apt clean
 RUN sudo apt update
 RUN sudo apt purge nvidia-* 
 RUN sudo apt autoremove
-RUN sudo apt install -y cuda
+
+RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+
+# RUN sudo apt install -y cuda
 
 #RUN echo y| conda install pytorch torchvision cudatoolkit=11.3 -c pytorch
 
