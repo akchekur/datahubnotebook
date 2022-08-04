@@ -32,4 +32,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: akhi0254/datahubenvupdate:testV3
+          tags: akhi0254/datahubenvupdate:env
