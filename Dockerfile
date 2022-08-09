@@ -24,12 +24,12 @@ RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-lin
 RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
 RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
 
-RUN sudo apt clean
-RUN sudo apt update
-RUN sudo apt purge nvidia-* 
-RUN sudo apt autoremove
+# RUN sudo apt clean
+# RUN sudo apt update
+# RUN sudo apt purge nvidia-* 
+# RUN sudo apt autoremove
 
-RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+# RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
 
 # RUN sudo apt install -y cuda
 
