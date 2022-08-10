@@ -30,12 +30,12 @@ RUN apt-get update -y && \
 
 RUN apt-get -y install htop
 
-RUN sudo apt-get update
-RUN sudo echo y|apt-get install build-essential manpages-dev -
+RUN apt-get update
+RUN echo y|apt-get install build-essential manpages-dev -
 
 RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
-RUN sudo unzip ninja-linux.zip -d /usr/local/bin/
-RUN sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
+RUN unzip ninja-linux.zip -d /usr/local/bin/
+RUN update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
 
 USER jovyan
 WORKDIR /home/jovyan
