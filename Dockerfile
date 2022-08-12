@@ -31,14 +31,16 @@ RUN apt-get update -y && \
 RUN apt-get -y install htop
 
 RUN apt-get update && apt-get install -y python3.8 python3.8-dev python3.8-venv curl python3-tk
+RUN sudo apt install python3.8
+RUN sudo apt install python3.8-distutils
 
-RUN python3.8 get-pip.py
-# RUN pip install -r auto/requirements.txt
-
-RUN python3.8 -m pip install -U pip setuptools
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN sudo python3.8 get-pip.py
 
 RUN apt-get update
 RUN echo y|apt-get install build-essential manpages-dev -
+
+RUN python3.8 -m pip install -U pip setuptools
 
 RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
 RUN unzip ninja-linux.zip -d /usr/local/bin/
