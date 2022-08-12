@@ -22,6 +22,23 @@ RUN apt-get update -y && \
     htop \
     wget \
     p7zip \
+    
+    pkg-config \
+    libglvnd0 \
+    libgl1 \
+    libglx0 \
+    libegl1 \
+    libgles2 \
+    libglvnd-dev \
+    libgl1-mesa-dev \
+    libegl1-mesa-dev \
+    libgles2-mesa-dev \
+    cmake \
+    curl \
+    libsm6 \
+    libxext6 \
+    libxrender-dev\
+    
     p7zip-full && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     chmod g-s /usr/bin/screen && \
