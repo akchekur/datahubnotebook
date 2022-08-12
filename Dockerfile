@@ -30,6 +30,10 @@ RUN apt-get update -y && \
 
 RUN apt-get -y install htop
 
+RUN apt-get update && apt-get install -y python3.8 python3.8-dev python3.8-venv curl python3-tk
+
+RUN python3.8 -m pip install -U pip setuptools
+
 RUN apt-get update
 RUN echo y|apt-get install build-essential manpages-dev -
 
